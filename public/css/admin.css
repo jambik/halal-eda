@@ -1,0 +1,44 @@
+.dataTables_wrapper .dataTables_paginate .paginate_button,
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled,
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover {
+	padding: 0;
+	margin-left: 0;
+	border: none;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover { border: none; background: none; }
+
+.select2-row {  }
+.select2-row img { padding: 2px; background: #fff; border-right: 1px solid #ddd; border-radius: 2px; }
+.select2-row .title {  }
+.select2-row .select2-img { display: inline-block; width: 50px; margin-right: 10px; }
+.select2-row .select2-text { display: inline-block; }
+.select2-row .select2-text .desc { font-size: 80%; color: #555; }
+.select2-row .select2-text .price { font-size: 80%; color: #800000; }
+
+.add-lunch { padding: 10px; text-align: center; clear: both; }
+
+.ask-lunch { padding: 20px; border: 1px dashed #2ca02c; border-radius: 10px; margin-bottom: 10px; clear: both; }
+.ask-lunch select { max-width: 300px; }
+.ask-lunch .or { margin: 10px 0; }
+
+.create-lunch { padding: 20px; border: 1px dashed #2ca02c; border-radius: 10px; margin-bottom: 10px; clear: both; }
+.create-lunch .lunch-part-name { color: #000; background: #eee; padding: 5px; border-radius: 2px; margin-bottom: 5px; }
+.create-lunch .lunch_total { text-align: center; margin-bottom: 15px; }
+
+.selected-lunch .lunch-inner { border: 1px solid #ddd; background: #fff; border-radius: 5px; margin-bottom: 30px; box-shadow: 1px 1px 3px #eee; }
+.selected-lunch .lunch-name { background: #265a88; color: #fff; border-top-left-radius: 5px; border-top-right-radius: 5px; padding: 8px; }
+.selected-lunch .lunch-body { padding: 10px; font-size: 12px; min-height: 200px; }
+.selected-lunch .lunch-part { margin: 0 0 7px 0; }
+.selected-lunch .lunch-part-name { display: inline-block; vertical-align: top; width: 30%; border-bottom: 1px dashed #bbb; }
+.selected-lunch .meal1-name, .selected-lunch .meal2-name, .selected-lunch .garnish-name, .selected-lunch .salad-name, .selected-lunch .drink-name, .selected-lunch .additions-name { display: inline-block; width: 68%; padding-left: 5px; }
+.selected-lunch .lunch-summary { background: #eee; padding: 10px; font-size: 12px; }
+.selected-lunch .price-block { width: 49%; float: left; }
+.selected-lunch .lunch-price { font-size: 15px; font-weight: bolder; margin-bottom: 10px; }
+.selected-lunch .lunch-price span { color: #800000; }
+.selected-lunch .original-price { color: #000; font-size: 12px; margin-top: 10px; }
+.selected-lunch .quantity-block { width: 49%; float: right; text-align: right; }
+.selected-lunch .lunch-quantity select { min-width: 50px; }
+.selected-lunch .lunch-remove { margin-top: 10px; color: #bb0000; cursor: pointer; }
+
+input.inline-edit{ border: none; padding: 0; margin: 0;	vertical-align: top; background: transparent; }
+input.inline-edit:hover, input.inline-edit:focus{ background-color: #fff; }

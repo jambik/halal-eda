@@ -1,0 +1,23 @@
+{
+  "name": "halal-eda",
+  "description": "",
+  "main": "",
+  "authors": [
+    "jambik <jambik@gmail.com>"
+  ],
+  "license": "MIT",
+  "moduleType": [
+    "amd"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-ui": "~1.11.4"
+  }
+}
