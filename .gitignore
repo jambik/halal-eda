@@ -2,6 +2,6 @@
 /vendor
 /node_modules
 /bower_components
-Homestead.yaml
-Homestead.json
 .env
+composer.lock
+_ide_helper.php
