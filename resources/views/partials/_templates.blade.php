@@ -8,7 +8,7 @@
 					<option
 							value="{{ $val->id }}"
 							data-image="{{ $val->image }}"
-							data-img_url="{{ $val->img_url }}"
+							data-img_url="/images/xsmall/{{ $val->img_url }}"
 							data-img_size="{{ $val->img_size['xs'] }}"
 							data-name="{{ $val->name }}"
 							data-description="{{ $val->description }}"
@@ -48,7 +48,7 @@
 		<select id="meal1" data-placeholder="- Первое -" data-allow-clear="true" onchange="calculateLunch(this)" class="form-control">
 			<option value="" label="-"></option>
 			@foreach ($meal1 as $val)
-				<option value="{{ $val->id }}" data-image="{{ $val->image }}" data-img_url="{{ $val->img_url }}" data-img_size="{{ $val->img_size['xs'] }}" data-description="{{ $val->description }}" data-price="{{ $val->price }}">{{ $val->name }}</option>
+				<option value="{{ $val->id }}" data-image="{{ $val->image }}" data-img_url="/images/xsmall/{{ $val->img_url }}" data-description="{{ $val->description }}" data-price="{{ $val->price }}">{{ $val->name }}</option>
 			@endforeach
 		</select>
 		<div class="height-10"></div>
@@ -56,7 +56,7 @@
 		<select id="meal2" data-placeholder="- Второе -" data-allow-clear="true" onchange="calculateLunch(this)" class="form-control">
 			<option value=""></option>
 			@foreach ($meal2 as $val)
-				<option value="{{ $val->id }}" data-image="{{ $val->image }}" data-img_url="{{ $val->img_url }}" data-img_size="{{ $val->img_size['xs'] }}" data-description="{{ $val->description }}" data-price="{{ $val->price }}">{{ $val->name }}</option>
+				<option value="{{ $val->id }}" data-image="{{ $val->image }}" data-img_url="/images/xsmall/{{ $val->img_url }}" data-description="{{ $val->description }}" data-price="{{ $val->price }}">{{ $val->name }}</option>
 			@endforeach
 		</select>
 		<div class="height-10"></div>
@@ -64,7 +64,7 @@
 		<select id="garnish" data-placeholder="- Гарнир -" data-allow-clear="true" onchange="calculateLunch(this)" class="form-control">
 			<option value=""></option>
 			@foreach ($garnishs as $val)
-				<option value="{{ $val->id }}" data-image="{{ $val->image }}" data-img_url="{{ $val->img_url }}" data-img_size="{{ $val->img_size['xs'] }}" data-description="{{ $val->description }}" data-price="{{ $val->price }}">{{ $val->name }}</option>
+				<option value="{{ $val->id }}" data-image="{{ $val->image }}" data-img_url="/images/xsmall/{{ $val->img_url }}" data-description="{{ $val->description }}" data-price="{{ $val->price }}">{{ $val->name }}</option>
 			@endforeach
 		</select>
 		<div class="height-10"></div>
@@ -72,7 +72,7 @@
 		<select id="salad" data-placeholder="- Салат -" data-allow-clear="true" onchange="calculateLunch(this)" class="form-control">
 			<option value=""></option>
 			@foreach ($salads as $val)
-				<option value="{{ $val->id }}" data-image="{{ $val->image }}" data-img_url="{{ $val->img_url }}" data-img_size="{{ $val->img_size['xs'] }}" data-description="{{ $val->description }}" data-price="{{ $val->price }}">{{ $val->name }}</option>
+				<option value="{{ $val->id }}" data-image="{{ $val->image }}" data-img_url="/images/xsmall/{{ $val->img_url }}" data-description="{{ $val->description }}" data-price="{{ $val->price }}">{{ $val->name }}</option>
 			@endforeach
 		</select>
 		<div class="height-10"></div>
@@ -80,14 +80,14 @@
 		<select id="drink" data-placeholder="- Напиток -" data-allow-clear="true" onchange="calculateLunch(this)" class="form-control">
 			<option value=""></option>
 			@foreach ($drinks as $val)
-				<option value="{{ $val->id }}" data-image="{{ $val->image }}" data-img_url="{{ $val->img_url }}" data-img_size="{{ $val->img_size['xs'] }}" data-description="{{ $val->description }}" data-price="{{ $val->price }}">{{ $val->name }}</option>
+				<option value="{{ $val->id }}" data-image="{{ $val->image }}" data-img_url="/images/xsmall/{{ $val->img_url }}" data-description="{{ $val->description }}" data-price="{{ $val->price }}">{{ $val->name }}</option>
 			@endforeach
 		</select>
 		<div class="height-10"></div>
 
 		<select id="additions" multiple="multiple" data-placeholder="- Дополнительно -" onchange="calculateLunch(this)" class="form-control">
 			@foreach ($additions as $val)
-				<option value="{{ $val->id }}" data-image="{{ $val->image }}" data-img_url="{{ $val->img_url }}" data-img_size="{{ $val->img_size['xs'] }}" data-description="{{ $val->description }}" data-price="{{ $val->price }}">{{ $val->name }}</option>
+				<option value="{{ $val->id }}" data-image="{{ $val->image }}" data-img_url="/images/xsmall/{{ $val->img_url }}" data-description="{{ $val->description }}" data-price="{{ $val->price }}">{{ $val->name }}</option>
 			@endforeach
 		</select>
 

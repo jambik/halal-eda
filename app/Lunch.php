@@ -1,10 +1,11 @@
 <?php namespace App;
 
+use App\Traits\ImagableTrait;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 
 class Lunch extends Model {
+
+    use ImagableTrait;
 
     protected $table = 'lunchs';
 
@@ -72,41 +73,6 @@ class Lunch extends Model {
     public function getAdditionNamesAttribute()
     {
         return $this->additions()->lists('name')->all();
-    }
-
-    public function getImgUrlAttribute()
-    {
-        return static::imageUrl();
-    }
-
-    public function getImgSizeAttribute()
-    {
-        $imgThumb['xs']    = '?w=50&h=40&fit=crop&'.$this->updated_at->timestamp;
-        $imgThumb['icon']  = '?w=100&h=80&fit=crop&'.$this->updated_at->timestamp;
-        $imgThumb['thumb'] = '?w=300&h=200&fit=crop&'.$this->updated_at->timestamp;
-        return $imgThumb;
-    }
-
-    public function saveImage($item, Request $request)
-    {
-        if ($request->hasFile('image'))
-        {
-            $file = $request->file('image')->move(static::imagePath(), 'lunch-'.$item->id.".".Str::lower($request->file('image')->getClientOriginalExtension()));
-            $item->image = $file->getFilename();
-            $item->save();
-        }
-
-        return true;
-    }
-
-    public static function imagePath()
-    {
-        return config('laravel-glide.source.path').'/lunchs';
-    }
-
-    public static function imageUrl()
-    {
-        return '/img/lunchs/';
     }
 
 }

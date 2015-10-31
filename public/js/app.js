@@ -333,7 +333,7 @@ function formatItem(item)
 
     var $item = $(
         '<div class="select2-row">' +
-            (element.data('image') ? '<div class="select2-img"><img src="' + element.data('img_url') + element.data('image') + element.data('img_size') +  '" /></div>' : '') +
+            (element.data('image') ? '<div class="select2-img"><img src="' + element.data('img_url') + element.data('image') + '" /></div>' : '') +
             '<div class="select2-text">' +
                 '<div class="title">' + element.html() + (element.data('price') ? ' - <strong class="price">' + element.data('price') + ' руб.</strong>' : '') + '</div>' +
                 (element.data('description') ? '<div class="desc">' + element.data('description')+ '</div>' : '') +

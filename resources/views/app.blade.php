@@ -311,7 +311,7 @@
                     <div class="col-lg-4 col-md-4 col-sm-6 lunch-item"{!! ($key+1) > $lunchCount ? ' style="display: none;"' : '' !!}>
                         <div class="set-lunch">
                             <div class="img">
-                                @if($item->image) <img src='{{ $item->img_url.$item->image.$item->img_size['thumb'] }}' class="img-responsive" alt='' /> @else <img src='/img/noimg.jpg' style='width: 300px; height: 200px;' class="img-responsive" alt='' /> @endif
+                                @if($item->image) <img src='/images/medium/{{ $item->img_url.$item->image }}' class="img-responsive" alt='' /> @else <img src='/img/noimg.jpg' style='width: 300px; height: 200px;' class="img-responsive" alt='' /> @endif
                             </div>
                             <div class="name text-uppercase">{{ $item->name }}</div>
                             <div class="set-items">
@@ -357,7 +357,7 @@
                     @foreach ($meal1 as $key => $item)
                         <div class="menu-item"{!! ($key+1) > $menuCount ? ' style="display: none;"' : '' !!}>
                             <div class="menu-img">
-                                @if($item->image) <img src='{{ $item->img_url.$item->image.$item->img_size['icon'] }}' class="img-responsive" alt='' /> @else <img src='/img/noimg.jpg' style='width: 100px; height: 80px;' class="img-responsive" alt='' /> @endif
+                                @if($item->image) <img src='/images/small/{{ $item->img_url.$item->image }}' class="img-responsive" alt='' /> @else <img src='/img/noimg.jpg' style='width: 100px; height: 80px;' class="img-responsive" alt='' /> @endif
                             </div>
                             <div class="menu-info">
                                 <strong>{{ $item->name }}</strong>
@@ -373,7 +373,7 @@
                     @foreach ($meal2 as $key => $item)
                         <div class="menu-item"{!! ($key+1) > $menuCount ? ' style="display: none;"' : '' !!}>
                             <div class="menu-img">
-                                @if($item->image) <img src='{{ $item->img_url.$item->image.$item->img_size['icon'] }}' class="img-responsive" alt='' /> @else <img src='/img/noimg.jpg' style='width: 100px; height: 80px;' class="img-responsive" alt='' /> @endif
+                                @if($item->image) <img src='/images/small/{{ $item->img_url.$item->image }}' class="img-responsive" alt='' /> @else <img src='/img/noimg.jpg' style='width: 100px; height: 80px;' class="img-responsive" alt='' /> @endif
                             </div>
                             <div class="menu-info">
                                 <strong>{{ $item->name }}</strong>
@@ -392,7 +392,7 @@
                     @foreach ($salads as $key => $item)
                         <div class="menu-item"{!! ($key+1) > $menuCount ? ' style="display: none;"' : '' !!}>
                             <div class="menu-img">
-                                @if($item->image) <img src='{{ $item->img_url.$item->image.$item->img_size['icon'] }}' class="img-responsive" alt='' /> @else <img src='/img/noimg.jpg' style='width: 100px; height: 80px;' class="img-responsive" alt='' /> @endif
+                                @if($item->image) <img src='/images/small/{{ $item->img_url.$item->image }}' class="img-responsive" alt='' /> @else <img src='/img/noimg.jpg' style='width: 100px; height: 80px;' class="img-responsive" alt='' /> @endif
                             </div>
                             <div class="menu-info">
                                 <strong>{{ $item->name }}</strong>
@@ -408,7 +408,7 @@
                     @foreach ($drinks as $key => $item)
                         <div class="menu-item"{!! ($key+1) > $menuCount ? ' style="display: none;"' : '' !!}>
                             <div class="menu-img">
-                                @if($item->image) <img src='{{ $item->img_url.$item->image.$item->img_size['icon'] }}' class="img-responsive" alt='' /> @else <img src='/img/noimg.jpg' style='width: 100px; height: 80px;' class="img-responsive" alt='' /> @endif
+                                @if($item->image) <img src='/images/small/{{ $item->img_url.$item->image }}' class="img-responsive" alt='' /> @else <img src='/img/noimg.jpg' style='width: 100px; height: 80px;' class="img-responsive" alt='' /> @endif
                             </div>
                             <div class="menu-info">
                                 <strong>{{ $item->name }}</strong>

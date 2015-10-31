@@ -24,7 +24,7 @@
 			@foreach($items as $item)
 				<tr>
 					<td>{{ $item->id }}</td>
-					<td>@if ($item->image)<img src='{{ $item->img_url.$item->image.$item->img_size['icon'] }}' alt='' />@endif</td>
+					<td>@if ($item->image)<img src='/images/small/{{ $item->img_url.$item->image }}' alt='' />@endif</td>
 					<td>{{ $item->name }}</td>
 					<td>{{ $item->description }}</td>
 					<td>{{ $item->weight }}</td>

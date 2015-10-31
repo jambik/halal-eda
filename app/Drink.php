@@ -1,83 +1,22 @@
 <?php namespace App;
 
+use App\Traits\ImagableTrait;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 
 class Drink extends Model {
 
-	protected $table = "drinks";
+    use ImagableTrait;
 
-	protected $fillable = ['name', 'description', 'weight', 'price', 'image'];
+    protected $table = "drinks";
 
-	/**
-	 * Get Lunchs
-	 */
-	public function lunchs()
-	{
-		$this->belongsToMany('App\Lunch');
-	}
+    protected $fillable = ['name', 'description', 'weight', 'price', 'image'];
 
-	/**
-	 * Get Image url path attribute
-	 *
-	 * @return string
-	 */
-	public function getImgUrlAttribute()
-	{
-		return static::imageUrl();
-	}
+    /**
+     * Get Lunchs
+     */
+    public function lunchs()
+    {
+        $this->belongsToMany('App\Lunch');
+    }
 
-	/**
-	 * Get Image sizes attribute (as array of glide url paths)
-	 *
-	 * @return array
-	 */
-	public function getImgSizeAttribute()
-	{
-		$imgThumb['xs']    = '?w=50&h=40&fit=crop&'.$this->updated_at->timestamp;
-		$imgThumb['icon']  = '?w=100&h=80&fit=crop&'.$this->updated_at->timestamp;
-		$imgThumb['thumb'] = '?w=300&h=200&fit=crop&'.$this->updated_at->timestamp;
-		return $imgThumb;
-	}
-
-	/**
-	 * Save Item Image
-	 *
-	 * @param         $item
-	 * @param Request $request
-	 *
-	 * @return bool
-	 */
-	public function saveImage($item, Request $request)
-	{
-		if ($request->hasFile('image'))
-		{
-			$file = $request->file('image')->move(static::imagePath(), 'drink-'.$item->id.".".Str::lower($request->file('image')->getClientOriginalExtension()));
-			$item->image = $file->getFilename();
-			$item->save();
-		}
-
-		return true;
-	}
-
-	/**
-	 * Get Image directory path
-	 *
-	 * @return string
-	 */
-	public static function imagePath()
-	{
-		return config('laravel-glide.source.path').'/drinks';
-	}
-
-	/**
-	 * Get Image url path
-	 *
-	 * @return string
-	 */
-	public static function imageUrl()
-	{
-		return '/img/drinks/';
-	}
 }

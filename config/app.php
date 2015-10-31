@@ -141,7 +141,6 @@ return [
         Laracasts\Flash\FlashServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
-        Spatie\Glide\GlideServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Clockwork\Support\Laravel\ClockworkServiceProvider::class,
 
@@ -207,7 +206,6 @@ return [
         'Flash'      => Laracasts\Flash\Flash::class,
         'Entrust'    => Zizaco\Entrust\EntrustFacade::class,
         'Image'      => Intervention\Image\Facades\Image::class,
-        'GlideImage' => Spatie\Glide\GlideImageFacade::class,
         'Clockwork'  => Clockwork\Support\Laravel\Facade::class,
 
     ],
