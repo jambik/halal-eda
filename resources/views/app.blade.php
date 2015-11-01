@@ -456,6 +456,9 @@
                             <textarea class="form-control" name="message" placeholder="Сообщение"></textarea>
                         </div>
                         <div class="form-group">
+                            <div class="g-recaptcha" data-sitekey="{{ env('GOOGLE_RECAPTCHA_KEY') }}"></div>
+                        </div>
+                        <div class="form-group">
                             <button type="submit" class="btn btn-success btn-block" onclick="return feedback(this);">Отправить сообщение</button>
                         </div>
                     </form>

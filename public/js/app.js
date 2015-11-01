@@ -93,6 +93,7 @@ function feedback(element)
 
     var form = element.closest('form');
 
+    element.closest('form').find('.alert').remove();
     element.append(' <i class="fa fa-spinner fa-spin"></i>');
     element.prop('disabled', true);
 
@@ -100,27 +101,27 @@ function feedback(element)
         method: form.attr('method'),
         url: form.attr('action'),
         data: form.serialize(),
-        dataType: 'json',
         success: function(data)
         {
-            console.log(data);
-            var response = data;
-
-            if (response.status == 'error')
-            {
-                alert(response.errors);
-            }
-            else if (response.status == 'success')
-            {
-                $('#form_feedback').prepend(makeSuccessMessage('Сообщение отправлено'));
-            }
+            $('#form_feedback').prepend(makeSuccessMessage('Сообщение отправлено'));
         },
         error: function(jqXHR, textStatus, errorThrown)
         {
-            console.log(jqXHR);
-            console.log(textStatus);
-            console.log(errorThrown);
-            alert('Возникла ошибка во время запроса.')
+            if (jqXHR.status == 422) // Если статус 422 (неправильные входные данные) то отображаем ошибки
+            {
+                var formStatusText = "<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button><div class='text-uppercase'>Ошибка!</div><ul>";
+
+                $.each(jqXHR.responseJSON, function (index, value) {
+                    formStatusText += "<li>" + value + "</li>";
+                });
+
+                formStatusText += "</ul></div>";
+                $('#form_feedback').prepend(formStatusText);
+            }
+            else
+            {
+                alert('Возникла ошибка во время запроса.')
+            }
         },
         complete: function(jqXHR, textStatus)
         {
