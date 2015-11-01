@@ -2,6 +2,7 @@
 
 namespace App\Traits;
 
+use File;
 use Illuminate\Http\Request;
 
 trait ImagableTrait
@@ -17,26 +18,37 @@ trait ImagableTrait
     }
 
     /**
-     * Save Item Image
+     * Save Model Image
      *
-     * @param         $item
+     * @param $model
      * @param Request $request
      *
      * @return bool
      */
-    public function saveImage($item, Request $request)
+    public function saveImage($model, Request $request)
     {
-        if ($request->hasFile('image'))
+        if ($request->hasFile('image') && File::exists($request->file('image')->getPathname()))
         {
-            $imageName      = strtolower(class_basename($this)).'-'.$item->id;
+            $imageName = strtolower(class_basename($this)) . '-' . $model->id;
             $imageExtension = strtolower($request->file('image')->getClientOriginalExtension());
 
-            $file = $request->file('image')->move($this->imagePath(), $imageName.".".$imageExtension);
-            $item->image = $file->getFilename();
-            $item->save();
+            $file = $request->file('image')->move($this->imagePath(), $imageName . "." . $imageExtension);
+            $model->image = $file->getFilename();
+
+            $model->save();
         }
 
         return true;
+    }
+
+    /**
+     * Delete Model Image
+     *
+     * @return bool
+     */
+    public function deleteImage()
+    {
+        return File::delete($fileName = $this->imagePath().DIRECTORY_SEPARATOR.$this->image);
     }
 
     /**
@@ -59,4 +71,16 @@ trait ImagableTrait
         return $this->getTable().'/';
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::deleted(function($model)
+        {
+            $model->deleteImage();
+        });
+    }
 }
