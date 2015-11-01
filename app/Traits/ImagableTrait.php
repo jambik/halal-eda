@@ -58,4 +58,5 @@ trait ImagableTrait
     {
         return $this->getTable().'/';
     }
+
 }
