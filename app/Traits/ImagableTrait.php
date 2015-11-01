@@ -27,7 +27,7 @@ trait ImagableTrait
      */
     public function saveImage($model, Request $request)
     {
-        if ($request->hasFile('image') && File::exists($request->file('image')->getPathname()))
+        if ($request->hasFile('image'))
         {
             $imageName = strtolower(class_basename($this)) . '-' . $model->id;
             $imageExtension = strtolower($request->file('image')->getClientOriginalExtension());
