@@ -22,6 +22,49 @@ $(document).ready(function() {
         });
     }
 
+    if ($('#form_register .zxcvbn'))
+    {
+        $('#form_register .zxcvbn').on('keyup', function(e){
+            $('#progress').show();
+            $('#progress .progress-bar').removeClass('progress-bar-danger progress-bar-warning progress-bar-info progress-bar-success');
+
+            var result = zxcvbn($(this).val());
+            switch (result.score)
+            {
+                case 0:
+                {
+                    $('#progress .progress-bar').addClass('progress-bar-danger');
+                    $('#progress .progress-bar').html('очень слабый пароль');
+                    break;
+                }
+                case 1:
+                {
+                    $('#progress .progress-bar').addClass('progress-bar-warning');
+                    $('#progress .progress-bar').html('слабый пароль');
+                    break;
+                }
+                case 2:
+                {
+                    $('#progress .progress-bar').addClass('progress-bar-info');
+                    $('#progress .progress-bar').html('нормальный пароль');
+                    break;
+                }
+                case 3:
+                {
+                    $('#progress .progress-bar').addClass('progress-bar-success');
+                    $('#progress .progress-bar').html('хороший пароль');
+                    break;
+                }
+                case 4:
+                {
+                    $('#progress .progress-bar').addClass('progress-bar-success');
+                    $('#progress .progress-bar').html('очень хороший пароль');
+                    break;
+                }
+            }
+        });
+    }
+
     // Применять плагин select2 к списку с фотками и описанием
     if ($('.select_item').length)
     {

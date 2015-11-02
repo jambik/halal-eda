@@ -27,6 +27,7 @@ elixir(function (mix) {
         '../../../node_modules/jquery.scrollto/jquery.scrollTo.min.js',
         '../../../node_modules/select2/dist/js/select2.min.js',
         '../../../node_modules/select2/dist/js/i18n/ru.js',
+        '../../../node_modules/zxcvbn/dist/zxcvbn.js',
         '../../../bower_components/jquery-ui/ui/minified/effect.min.js',
         '../../../bower_components/jquery-ui/ui/minified/effect-drop.min.js',
         '../../../bower_components/jquery-ui/ui/minified/effect-blind.min.js',

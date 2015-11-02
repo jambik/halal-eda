@@ -63,7 +63,12 @@
                                             <input type="email" name="email" placeholder="Email" class="form-control" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" name="password" placeholder="Пароль" class="form-control" />
+                                            <input type="password" name="password" placeholder="Пароль" class="form-control zxcvbn" />
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="progress" id="progress" style="display: none;">
+                                                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <input type="password" name="password_confirmation" placeholder="Пароль еще раз" class="form-control" />
