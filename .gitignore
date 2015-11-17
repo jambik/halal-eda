@@ -3,5 +3,6 @@
 /node_modules
 /bower_components
 .env
+.env.production
 composer.lock
 _ide_helper.php
