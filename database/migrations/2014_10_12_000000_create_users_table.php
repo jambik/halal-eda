@@ -16,7 +16,7 @@ class CreateUsersTable extends Migration {
 		{
 			$table->increments('id');
 
-			$table->integer('contact_id')->unsigned()->default(0);
+			$table->integer('contact_id')->unsigned()->nullable();
 			$table->foreign('contact_id')->references('id')->on('contacts')->onDelete('cascade');
 
 			$table->string('name');

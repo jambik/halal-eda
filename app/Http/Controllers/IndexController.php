@@ -25,7 +25,7 @@ class IndexController extends Controller {
      */
     public function index()
     {
-        $lunchs   = Lunch::byUser(0)->with('meal1', 'meal2', 'garnish', 'salad', 'drink', 'additions')->get();
+        $lunchs   = Lunch::whereUserId(NULL)->with('meal1', 'meal2', 'garnish', 'salad', 'drink', 'additions')->get();
 
         $meal1     = Meal1::all();
         $meal2     = Meal2::all();

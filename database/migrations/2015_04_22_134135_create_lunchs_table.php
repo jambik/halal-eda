@@ -16,22 +16,22 @@ class CreateLunchsTable extends Migration {
 		{
 			$table->increments('id');
 
-			$table->integer('user_id')->unsigned()->default(0);
-			$table->foreign('user_id')->references('id')->on('meal1');
+			$table->integer('user_id')->unsigned()->nullable();
+			$table->foreign('user_id')->references('id')->on('users');
 
-			$table->integer('meal1_id')->unsigned()->default(0);
+			$table->integer('meal1_id')->unsigned()->nullable();
 			$table->foreign('meal1_id')->references('id')->on('meal1');
 
-			$table->integer('meal2_id')->unsigned()->default(0);
+			$table->integer('meal2_id')->unsigned()->nullable();
 			$table->foreign('meal2_id')->references('id')->on('meal2');
 
-			$table->integer('garnish_id')->unsigned()->default(0);
+			$table->integer('garnish_id')->unsigned()->nullable();
 			$table->foreign('garnish_id')->references('id')->on('garnishs');
 
-			$table->integer('salad_id')->unsigned()->default(0);
+			$table->integer('salad_id')->unsigned()->nullable();
 			$table->foreign('salad_id')->references('id')->on('salads');
 
-			$table->integer('drink_id')->unsigned()->default(0);
+			$table->integer('drink_id')->unsigned()->nullable();
 			$table->foreign('drink_id')->references('id')->on('drinks');
 
 			$table->string('name');

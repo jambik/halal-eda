@@ -22,7 +22,7 @@ class LunchsController extends Controller {
 	 */
 	public function index()
 	{
-		$items = Lunch::byUser(0)->get();
+		$items = Lunch::whereUserId(NULL)->get();
 
 		return view('admin.lunchs.index', compact('items'));
 	}
